@@ -63,8 +63,11 @@ public final class MapCreator {
 			MapImport.LOGGER.warn("Rejected malformed map tile from {}", player.getName().getString());
 			return;
 		}
+		long now = System.currentTimeMillis();
+		// Entries live until their window ends, not until disconnect: reconnecting must not reset the quota.
+		quotas.values().removeIf(q -> q.expired(now));
 		Quota quota = quotas.computeIfAbsent(player.getUUID(), uuid -> new Quota());
-		if (!quota.tryTake(System.currentTimeMillis())) {
+		if (!quota.tryTake(now)) {
 			if (quota.warn()) {
 				player.sendSystemMessage(Component.translatable("mapimport.error.rate_limit"));
 			}
@@ -75,10 +78,6 @@ public final class MapCreator {
 		if (!player.getInventory().add(stack)) {
 			player.drop(stack, false, Prediction.SERVER_ONLY);
 		}
-	}
-
-	public void forget(UUID player) {
-		quotas.remove(player);
 	}
 
 	private static boolean mayImport(ServerPlayer player) {
@@ -129,8 +128,12 @@ public final class MapCreator {
 		private int taken;
 		private boolean warned;
 
+		boolean expired(long now) {
+			return now - windowStart >= MINUTE_MS;
+		}
+
 		boolean tryTake(long now) {
-			if (now - windowStart >= MINUTE_MS) {
+			if (expired(now)) {
 				windowStart = now;
 				taken = 0;
 				warned = false;

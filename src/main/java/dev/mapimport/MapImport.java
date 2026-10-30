@@ -4,7 +4,6 @@ import dev.mapimport.network.MapTilePayload;
 import dev.mapimport.server.MapCreator;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
-import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
@@ -18,9 +17,7 @@ public class MapImport implements ModInitializer {
 	public void onInitialize() {
 		PayloadTypeRegistry.serverboundPlay().register(MapTilePayload.TYPE, MapTilePayload.CODEC);
 
-		MapCreator creator = new MapCreator();
-		ServerPlayNetworking.registerGlobalReceiver(MapTilePayload.TYPE, creator::receive);
-		ServerPlayConnectionEvents.DISCONNECT.register((handler, server) -> creator.forget(handler.getPlayer().getUUID()));
+		ServerPlayNetworking.registerGlobalReceiver(MapTilePayload.TYPE, new MapCreator()::receive);
 	}
 
 	public static Identifier id(String path) {

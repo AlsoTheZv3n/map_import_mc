@@ -37,3 +37,7 @@ gradlew runClient    # Dev-Client zum Ausprobieren
 - `network/MapTilePayload`: eine Kachel pro Paket (16.384 Bytes; Pakete zum Server dürfen höchstens 32 KiB groß sein).
 - `server/MapCreator`: prüft Rechte, Format und Farb-IDs und erzeugt gesperrte Karten in einer Pseudo-Dimension, damit die Welt sie nie übermalt.
 - `client/`: Befehl `/mapimport`, Dateidialog über SDL3 (wird mit Minecraft 26.x mitgeliefert).
+
+## Lizenz
+
+[CC0 1.0](LICENSE): gemeinfrei. Jeder darf den Code ohne Bedingungen verwenden, verändern und weitergeben.

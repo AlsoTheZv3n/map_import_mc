@@ -5,7 +5,7 @@
 	"name": "Map Import",
 	"description": "Import local images as locked map items. The client converts the image, the server creates the maps.",
 	"authors": [],
-	"license": "MIT",
+	"license": "CC0-1.0",
 	"environment": "*",
 	"entrypoints": {
 		"main": [

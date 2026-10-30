@@ -1,0 +1,24 @@
+{
+	"schemaVersion": 1,
+	"id": "mapimport",
+	"version": "${version}",
+	"name": "Map Import",
+	"description": "Import local images as locked map items. The client converts the image, the server creates the maps.",
+	"authors": [],
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.mapimport.MapImport"
+		],
+		"client": [
+			"dev.mapimport.client.MapImportClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

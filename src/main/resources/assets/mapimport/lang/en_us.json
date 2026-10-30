@@ -1,0 +1,16 @@
+{
+	"item.mapimport.tile": "%s (column %s, row %s)",
+	"item.mapimport.tile.lore": "Part of a %s × %s map wall",
+	"mapimport.converting": "Converting %s into %s × %s maps…",
+	"mapimport.sent": "Sent %s maps, they will appear in your inventory.",
+	"mapimport.preview_saved": "Preview saved: %s",
+	"mapimport.cancelled": "Import cancelled.",
+	"mapimport.error.unknown_flag": "Unknown option \"%s\". Possible: %s",
+	"mapimport.error.server_missing": "The server does not have Map Import installed.",
+	"mapimport.error.busy": "An import is already running.",
+	"mapimport.error.dialog": "Could not open the file dialog: %s",
+	"mapimport.error.read": "%s is not an image format Java can read (PNG, JPG, BMP, GIF).",
+	"mapimport.error.failed": "Import failed: %s",
+	"mapimport.error.permission": "Importing images needs creative mode or operator rights.",
+	"mapimport.error.rate_limit": "Too many maps in a short time, please wait a minute."
+}

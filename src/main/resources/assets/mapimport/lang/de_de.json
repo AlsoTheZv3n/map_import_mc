@@ -1,0 +1,16 @@
+{
+	"item.mapimport.tile": "%s (Spalte %s, Zeile %s)",
+	"item.mapimport.tile.lore": "Teil einer Kartenwand aus %s × %s Karten",
+	"mapimport.converting": "Wandle %s in %s × %s Karten um …",
+	"mapimport.sent": "%s Karten gesendet, sie landen in deinem Inventar.",
+	"mapimport.preview_saved": "Vorschau gespeichert: %s",
+	"mapimport.cancelled": "Import abgebrochen.",
+	"mapimport.error.unknown_flag": "Unbekannte Option „%s“. Möglich: %s",
+	"mapimport.error.server_missing": "Auf dem Server ist Map Import nicht installiert.",
+	"mapimport.error.busy": "Es läuft schon ein Import.",
+	"mapimport.error.dialog": "Dateidialog konnte nicht geöffnet werden: %s",
+	"mapimport.error.read": "%s ist kein Bildformat, das Java lesen kann (PNG, JPG, BMP, GIF).",
+	"mapimport.error.failed": "Import fehlgeschlagen: %s",
+	"mapimport.error.permission": "Bilder importieren geht nur im Kreativmodus oder mit Operator-Rechten.",
+	"mapimport.error.rate_limit": "Zu viele Karten in kurzer Zeit, bitte eine Minute warten."
+}
